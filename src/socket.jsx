@@ -1,12 +1,11 @@
 import { createContext, useMemo, useContext } from "react";
 import io from "socket.io-client";
-// import { server } from "./constants/config";
 
 const SocketContext = createContext();
 
 const getSocket = () => useContext(SocketContext);
 
-cconst SocketProvider = ({ children }) => {
+const SocketProvider = ({ children }) => {
   const socket = useMemo(
     () =>
       io("https://minimalist-chat-app-server.onrender.com", {
